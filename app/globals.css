@@ -2,26 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* styles/globals.css */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+/* 
+body.light {
+  background-color: #ffffff;
+  color: #000000;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+body.dark {
+  background-color: #000;
+  color: #ffffff;
+} */
+body.light {
+  background-color: white;
+  color: black;
+}
+
+body.dark {
+  background-color: black;
+  color: white;
+}
+
+/* Additional styles for dark mode */
+.dark .some-element {
+  background-color: #333;
+}
+
+/* Ensure to reset any defaults */
+.light .some-element {
+  background-color: #f0f0f0;
+}
+/* air effect */
+@keyframes slide-in {
+  0% {
+    transform: translateZ(-1000px) scale(0.5);
+    opacity: 0;
   }
+  100% {
+    transform: translateZ(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.slide-in-effect {
+  animation: slide-in 1s ease forwards;
 }
