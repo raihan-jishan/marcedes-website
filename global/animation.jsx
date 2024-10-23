@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export const LoadingAnimation = ({
   children,
@@ -24,24 +25,40 @@ export const LoadingAnimation = ({
 export default function AnimateCard({ children }) {
   const cardX = useMotionValue(0);
   const cardY = useMotionValue(0);
-  const rotateX = useTransform(cardY, [-300, 300], [10, -10]); // Reversed values
-  const rotateY = useTransform(cardX, [-300, 300], [-10, 10]); // Reversed values
-  const cardRotateX = useTransform(cardY, [-300, 300], [25, -25]); // Adjusted rotation values
-  const cardRotateY = useTransform(cardX, [-300, 300], [-25, 25]); // Adjusted rotation values
+  const rotateX = useTransform(cardY, [-300, 300], [10, -10]);
+  const rotateY = useTransform(cardX, [-300, 300], [-10, 10]);
+  const cardRotateX = useTransform(cardY, [-300, 300], [25, -25]);
+  const cardRotateY = useTransform(cardX, [-300, 300], [-25, 25]);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 637);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleMouseMove = (event) => {
-    const offsetX = event.clientX - window.innerWidth / 2;
-    const offsetY = event.clientY - window.innerHeight / 2;
+    // Ensure this only runs on the client side
+    if (typeof window !== "undefined") {
+      const offsetX = event.clientX - window.innerWidth / 2;
+      const offsetY = event.clientY - window.innerHeight / 2;
 
-    cardX.set(offsetX);
-    cardY.set(offsetY);
+      cardX.set(offsetX);
+      cardY.set(offsetY);
+    }
   };
 
   const handleMouseLeave = () => {
     cardX.set(0);
     cardY.set(0);
   };
-  const isMobile = window.innerWidth <= 637;
+
   const style = {
     display: "flex",
     justifyContent: "center",
@@ -55,7 +72,6 @@ export default function AnimateCard({ children }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* this div can be used as the 'dotted grid' */}
       <motion.div
         style={{
           margin: "auto",
@@ -77,7 +93,7 @@ export default function AnimateCard({ children }) {
             width: 400,
             height: 250,
             transformStyle: "preserve-3d",
-            perspective: 800, // Set perspective on the card
+            perspective: 800,
             cardRotateX,
             cardRotateY,
           }}
