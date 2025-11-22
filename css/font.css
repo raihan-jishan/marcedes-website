@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-Comfortaa {
+  font-family: "Comfortaa", sans-serif;
+}
+
+.font-ElmsSans {
+  font-family: "Elms Sans", sans-serif;
+}
+
+.font-openSans {
+  font-family: "Open Sans", sans-serif;
+}
+.font-Manrope{
+  font-family: 'Manrope', sans-serif;
+}

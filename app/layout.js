@@ -1,13 +1,5 @@
-import { Poppins } from "next/font/google";
- 
 import "./globals.css";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
-});
-
+import "../css/font.css";
 export const metadata = {
   title: "marcedes  ",
   description: "marcedes website using nextjs ",
@@ -16,10 +8,10 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) { 
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.variable}>{children}</body>
+      <body className="font-montserrat bg-black text-white">{children}</body>
     </html>
   );
 }

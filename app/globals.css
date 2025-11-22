@@ -2,21 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* styles/globals.css */
+::-webkit-scrollbar {
+  width: 4px;
+}
 
+
+::-webkit-scrollbar-thumb {
+  background: #a955f7e0;
+}
+
+ 
 body {
   transition: background-color 0.3s, color 0.3s;
 }
-/* 
-body.light {
-  background-color: #ffffff;
+
+/* design the cursor selection bg */
+::selection {
+  background: #8b5cf6;
   color: #000000;
 }
 
-body.dark {
-  background-color: #000;
-  color: #ffffff;
-} */
 body.light {
   background-color: white;
   color: black;

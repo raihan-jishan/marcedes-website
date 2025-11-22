@@ -1,26 +1,23 @@
-import Discover from "@/components/Discover";
-import Hero from "@/components/Hero";
-import History from "@/components/History";
-import Model from "@/components/Model";
-import Social from "@/components/Social";
-import Story from "@/components/Story";
-import TestDrive from "@/components/TestDrive";
-import Footer from "@/components/ui/shared/Footer";
-import Navbar from "@/components/ui/shared/Navbar";
-import { ThemeProvider } from "@/context/ThemeContext";
+import Explore from "@/components/explore";
+import Feature from "@/components/feature";
+import GetStart from "@/components/getStart";
+import {Hero} from "@/components/hero";
+import Model from "@/components/model";
+import Footer from "@/components/shared/footer";
+import Nav from "@/components/shared/nav";
+import Story from "@/components/story";
 
 export default function Home() {
   return (
-    <ThemeProvider>
-      <Navbar />
+    <div>
+      <Nav />
       <Hero />
-      <Discover /> 
-      <Story /> 
-      <Model /> 
-      <History />
-      <Social /> 
-      <TestDrive /> 
-      <Footer />  
-    </ThemeProvider>
+      <Feature />
+      <Explore />
+      <Model />
+      <Story />
+      <GetStart />
+      <Footer /> 
+    </div>
   );
 }
