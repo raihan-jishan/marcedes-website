@@ -6,7 +6,7 @@ import PlaceBooking from "../../../components/placeBooking";
 import PowerInfo from "../../../components/powerInfo";
 import Footer from "../../../components/shared/footer";
 import TopBar from "../../../components/shared/topBar";
-import { modelDetailsData } from "../constants/data";
+import { modelDetailsData } from "../../../constants/data";
 
 export default async function ModelDetails({ params }) {
   const { modelId } = params; // modelId from the URL (like /models/1)
