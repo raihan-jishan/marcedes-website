@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { ModelBtn, TestDriveBtn } from "./ui/button";
+import {   TestDriveBtn } from "./ui/button";
 
-export default function getStart({ imagePath = "/assets/getStart-image.jpg" }) {
+export default function GetStart({ imagePath = "/assets/getStart-image.jpg" }) {
   const rootRef = useRef(null);
   const titleRef = useRef(null);
   const textRef = useRef(null);
@@ -22,7 +22,7 @@ export default function getStart({ imagePath = "/assets/getStart-image.jpg" }) {
     }
 
     const onLoad = () => setLoaded(true);
-    const onError = () => setLoaded(true); // still proceed if image fails
+    const onError = () => setLoaded(true);
 
     imgEl.addEventListener("load", onLoad);
     imgEl.addEventListener("error", onError);
@@ -33,7 +33,7 @@ export default function getStart({ imagePath = "/assets/getStart-image.jpg" }) {
     };
   }, []);
 
-  // run GSAP only after image (or failure) and when DOM rendered
+  // run GSAP
   useEffect(() => {
     if (!loaded) return;
     if (!rootRef.current) return;
@@ -43,7 +43,6 @@ export default function getStart({ imagePath = "/assets/getStart-image.jpg" }) {
         defaults: { ease: "power3.out", duration: 0.9 },
       });
 
-      // safe references (all DOM nodes present)
       const title = titleRef.current;
       const text = textRef.current;
       const btns = btnGroupRef.current
@@ -69,7 +68,7 @@ export default function getStart({ imagePath = "/assets/getStart-image.jpg" }) {
 
   return (
     <section ref={rootRef} className="mt-20 w-full">
-      <div className="grid max-w-screen-xl px-4 py-10 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12 items-center max-lg:flex max-lg:flex-col-reverse  ">
+      <div className="grid max-w-screen-xl px-4 py-10 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12 items-center max-lg:flex max-lg:flex-col-reverse">
         {/* LEFT */}
         <div className="place-self-center lg:col-span-7">
           <h1
@@ -87,14 +86,14 @@ export default function getStart({ imagePath = "/assets/getStart-image.jpg" }) {
             luxury on the move.
           </p>
 
-          <div ref={btnGroupRef} className="flex flex-wrap   gap-4">
+          <div ref={btnGroupRef} className="flex flex-wrap gap-4">
             <TestDriveBtn>Get Test Drive</TestDriveBtn>
           </div>
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="  lg:flex lg:col-span-5 ">
-          <div className="w-full flex justify-end  ">
+        <div className="lg:flex lg:col-span-5">
+          <div className="w-full flex justify-end">
             <div className="w-[90%] max-lg:w-full rounded-2xl max-lg:rounded-lg overflow-hidden shadow-2xl">
               <img
                 ref={imgRef}
