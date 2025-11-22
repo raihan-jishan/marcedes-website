@@ -60,6 +60,7 @@ export default function PowerSection({
       {powerConfig.map((item, index) => {
         return (
           <ModelInfoCard
+            key={index}
             icon={item.icon}
             info={item.info}
             label={item.label}
