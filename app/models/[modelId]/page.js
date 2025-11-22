@@ -1,12 +1,12 @@
-import { ModelHero } from "@/components/hero";
-import ModelGallery from "@/components/modelGallery";
-import ModelSpecification from "@/components/modelSpecification";
-import ModelVideo from "@/components/modelVideo";
-import PlaceBooking from "@/components/placeBooking";
-import PowerInfo from "@/components/powerInfo";
-import Footer from "@/components/shared/footer";
-import TopBar from "@/components/shared/topBar";
-import { modelDetailsData } from "@/constants/data";
+import { ModelHero } from "../../../components/hero";
+import ModelGallery from "../../../components/modelGallery";
+import ModelSpecification from "../../../components/modelSpecification";
+import ModelVideo from "../../../components/modelVideo";
+import PlaceBooking from "../../../components/placeBooking";
+import PowerInfo from "../../../components/powerInfo";
+import Footer from "../../../components/shared/footer";
+import TopBar from "../../../components/shared/topBar";
+import { modelDetailsData } from "../constants/data";
 
 export default async function ModelDetails({ params }) {
   const { modelId } = params; // modelId from the URL (like /models/1)
