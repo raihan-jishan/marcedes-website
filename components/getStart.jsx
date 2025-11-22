@@ -91,7 +91,7 @@ export default function GetStart({ imagePath = "/assets/getStart-image.jpg" }) {
           </div>
         </div>
 
-        {/* RIGHT IMAGE */}
+        {/* right side image */}
         <div className="lg:flex lg:col-span-5">
           <div className="w-full flex justify-end">
             <div className="w-[90%] max-lg:w-full rounded-2xl max-lg:rounded-lg overflow-hidden shadow-2xl">
