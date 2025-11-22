@@ -2,7 +2,6 @@ import Heading from "./ui/heading";
 import { HeroBtn } from "./ui/button";
 import Wrapper from "@/animation/wrapper";
 import Image from "next/image";
-import Link from "next/link";
 
 export const Hero = () => {
   return (

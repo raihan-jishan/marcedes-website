@@ -1,4 +1,4 @@
-import { ModelHero } from "../../../components/hero";
+import { ModelHero } from "../../../components/Hero";
 import ModelGallery from "../../../components/modelGallery";
 import ModelSpecification from "../../../components/modelSpecification";
 import ModelVideo from "../../../components/modelVideo";
